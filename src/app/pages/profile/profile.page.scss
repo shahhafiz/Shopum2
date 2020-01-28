@@ -1,0 +1,16 @@
+ion-content{
+    --background: var(--ion-color-light-tint);
+}
+
+.password{
+    position: absolute; 
+    z-index: 101;
+    right: 0; 
+    padding-right: 10px;
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.bottom-border{
+    border-bottom: 1px solid var(--ion-color-light-shade) !important;
+}

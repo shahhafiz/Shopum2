@@ -1,0 +1,27 @@
+<ion-content class="ion-padding ion-text-center" style="--background: white">
+  <div class="logo">
+    <h1>Shopum</h1>
+    <ion-icon src="../../assets/cart.svg" class="cart"></ion-icon>
+  </div>
+
+  <ion-item>
+    <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="password"  placeholder="Password"></ion-input>
+  </ion-item>
+
+  <p routerLink="/reset" routerDirection="forward" style="text-align: right;">Forgot your password?</p>
+  
+  <div>
+    <ion-button type="submit" (click)="login()" expand="block" class="ion-text-capitalize">
+      Log In
+    </ion-button>
+    <p style="text-align: center;" routerLink="/signup" routerDirection="forward">First time user? <u>Sign up</u></p>
+  </div>
+</ion-content>
+    
+  
+    
+  

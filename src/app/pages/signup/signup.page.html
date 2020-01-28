@@ -1,0 +1,30 @@
+<!-- <ion-header>
+</ion-header> -->
+
+
+<ion-content class="ion-padding" style="--background:white">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Sign Up</ion-title>
+  </ion-toolbar>
+  <br>
+  <br>
+  <br>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="email" placeholder="example@siswa.um.edu.my"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="password2" placeholder="confirm password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button (click)="signup()">
+    Register
+  </ion-button>
+
+  <ion-button fill="clear" class="ion-float-right" routerDirection="back" routerLink="/login"  >
+    Back
+  </ion-button>
+</ion-content>
+    

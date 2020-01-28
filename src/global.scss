@@ -1,0 +1,114 @@
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url('../src/assets/fonts/Montserrat-Regular.ttf');
+//     font-weight: 200;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: 'Rochester';
+    src: url('../src/assets/fonts/Rochester-Regular.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+ion-content{
+    --background: var(--ion-color-light-tint);
+}
+
+
+ion-header{
+    ion-toolbar{
+        --background: var(--ion-color-primary);
+        color: white;
+    
+        ion-title.homepage-title{
+            font-family: Rochester;
+            font-size: 2em;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+.sc-ion-card-md-h{
+    --background: white;
+}
+
+ion-item{
+    --highlight-color-valid : var(--ion-color-primary);
+}
+
+// ion-button, ion-row>ion-button{
+//     text-transform: none;
+//     font-size: 14px;
+// }
+
+div.logo{
+    >h1{
+        // margin: 0;
+        // text-align: center;
+        font-family: Rochester;
+        font-size: 72px;
+        color: #2F80ED;
+    
+        /* Blue 1 */
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    ion-icon.cart{
+        width: 10em;
+        height: 10em;  
+    }
+}
+
+.fab-button-bg{
+    --background: #1e202366;
+}
+
+.container {
+    // width: 100%;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}
+
+.alert-button.sc-ion-alert-md{
+    &.primary{
+        color: black;
+    }
+
+    &.secondary{
+        border: 2px solid var(--ion-color-danger-shade);
+        color: var(--ion-color-danger-shade);
+    }
+
+    &.success{
+        border: 2px solid var(--ion-color-success-shade);
+        color: var(--ion-color-success-shade);
+    }
+    
+    &.text-black{
+        color: black;
+    }
+}

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionChange)="search()" [(ngModel)]="searchedKeyword"></ion-searchbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of items | async" size="6">
+        <ion-card style="margin: 0;" routerLink="/show/{{item.id}}" routerDirection="forward">
+          <img src="{{item.url}}" alt="" class="card-image">
+          <ion-card-header>
+            <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+            <ion-card-title>{{item.price | currency : 'RM '}}</ion-card-title>
+            <span>
+              <ion-icon ios="ios-time" md="md-time" style="position: relative; top: 2px;"></ion-icon>
+              <!-- {{item.timestamp | dayDiff}} -->
+            </span>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

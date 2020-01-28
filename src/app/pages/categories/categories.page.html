@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+  <div *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+  
+  <div *ngIf="!loading">
+    <ion-chip routerLink="/home/all" routerDirection="forward">
+      <ion-label>All</ion-label>
+    </ion-chip>
+    <ion-chip *ngFor="let tag of tags" (click)="searchByExistingTag(tag)" >
+      <ion-label>{{tag.id}}</ion-label>
+    </ion-chip>
+  </div>
+ 
+  <!-- tags search bar start -->
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="form">
+        <ion-label>
+          Search using custom tag
+          <br>*only one tag can be inserted at most
+        </ion-label>
+        <ion-item>
+          <tag-input
+            formControlName="tags" 
+            [separatorKeyCodes]="[32]" 
+            maxItems="1"
+            secondaryPlaceholder="Enter tags" ></tag-input>
+        </ion-item>
+      </form>
+      <ion-item lines="none" class="ion-float-right">
+        <ion-button (click)="searchByCustomTag(form.value)">
+          Search</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <!-- tags search bar end -->
+</ion-content>

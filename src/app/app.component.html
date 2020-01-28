@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu type="overlay" contentId="main-content">
+      <!-- <ion-header>
+        <ion-toolbar class="ion-padding-start">
+          <ion-title>@{{username}}</ion-title>
+        </ion-toolbar>
+      </ion-header> -->
+      <br> <br> <br>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <!-- <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" lines="none"> -->
+            <ion-item (click)="click([p.url])" lines="none">
+              <ion-icon slot="start" [name]="p.icon" style="color: white;"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

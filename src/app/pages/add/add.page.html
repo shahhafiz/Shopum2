@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <!-- <ion-card *ngIf="imageData else elseBlock"> -->
+    <ion-card>
+      <!-- <img src="{{imageData}}" alt=""> -->
+      <img src="data:image/jpeg;base64,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" alt="">
+    </ion-card>
+
+    <!-- <ng-template #elseBlock>
+      <ion-button (click)="addImage()" fill="outline">
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Add photo
+      </ion-button>
+    </ng-template> -->
+  </div>
+  
+  <br><br><br> 
+
+  <ion-card>
+    <ion-item>
+      <ion-select [(ngModel)]="item.category" okText="OK" cancelText="Cancel" placeholder="Category" style="padding-left: 0;" disabled="{{loading}}">
+        <ion-select-option value="Fashion">Fashion</ion-select-option>
+        <ion-select-option value="Stationery">Stationery</ion-select-option>
+        <ion-select-option value="Book">Book</ion-select-option>
+        <ion-select-option value="Electronic">Electronic</ion-select-option>
+        <ion-select-option value="Vehicle">Vehicle</ion-select-option>
+        <ion-select-option value="Other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="text" placeholder="Name" [(ngModel)]="item.name" disabled="{{loading}}"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-input type="number" placeholder="Price" [(ngModel)]="item.price" disabled="{{loading}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Description" [(ngModel)]="item.description" rows="3" disabled="{{loading}}"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea type="text" placeholder="Faulties (if any)" [(ngModel)]="item.faulty" disabled="{{loading}}"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+<!-- 
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="form" >
+        <ion-item disabled="{{loading}}">
+          <tag-input formControlName="tags" [separatorKeyCodes]="[32]" [disable]="false"></tag-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+
+<ion-toolbar *ngIf="!loading; else saving" class="footer">
+  <!-- <ion-button fill="outline" expand="block" (click)="save(form.value)"> -->
+  <ion-button expand="block" (click)="save()">
+    Upload
+  </ion-button>
+</ion-toolbar>
+
+<ng-template #saving>
+  <ion-toolbar class="ion-text-center" class="footer">
+    <ion-spinner name="dots"></ion-spinner>
+  </ion-toolbar>
+</ng-template>

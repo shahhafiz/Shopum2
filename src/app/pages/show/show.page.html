@@ -1,0 +1,86 @@
+<ion-content>
+  <ion-fab horizontal="start" vertical="top" slot="fixed">
+    <!-- <ion-fab-button class="back-button" size="small" routerLink="/menu/home" routerDirection="back" > -->
+    <ion-fab-button class="fab-button-bg" size="small" (click)="navigateBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab horizontal="end" vertical="top" slot="fixed">
+    <!-- <ion-fab-button class="back-button" size="small" routerLink="/menu/home" routerDirection="back" > -->
+    <ion-fab-button class="fab-button-bg" size="small" (click)="share()">
+        <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <!-- Skeleton start -->
+  <div *ngIf="!show">
+    <ion-skeleton-text animated style="height: 400px; margin-top:0% ;"></ion-skeleton-text>
+    <ion-item>
+      <ion-label>
+        <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+        <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+        <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+        <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+        <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+        <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+        <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
+  </div>
+  <!-- Skeleton end -->
+  <div *ngIf="data" [ngClass]="{'show':show , hide:!show}">
+    <ion-skeleton-text animated style="height: 400px; margin-top: 0%;" *ngIf="!show"></ion-skeleton-text>
+    <img src="{{ item.url }}" alt="" (load)="imageLoaded()" style="display: block; margin: auto;">
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">
+        <ion-button *ngIf="theUserIsTheOwner" routerLink="/edit/{{id}}" routerDirection="forward" class="ion-float-right" fill="outline" color="warning">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        
+        <ion-button *ngIf="theUserIsTheOwner" (click)="presentAlertConfirm()" class="ion-float-right" fill="outline" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <h3 style="color: black; width: 80%;">{{ item.name }}</h3>
+        <h1>RM {{ item.price }}</h1>
+        <br>
+        <span> by @{{ item.owner.name }} </span> 
+        <span style="float: right;">
+          <ion-icon ios="ios-time" md="md-time" style="position: relative; top: 2px;"></ion-icon>
+          {{item.timestamp | dayDiff}} <br>
+        </span>
+      </ion-label>
+    </ion-item>
+        
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <h3>Description</h3>
+        <p>{{item.description}}</p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">
+        <h3>Faulty</h3>
+        <p>{{item.faulty}}</p>
+      </ion-label>
+    </ion-item>
+    <a *ngIf="!theUserIsTheOwner" 
+      href="https://api.whatsapp.com//send?phone={{owner.phoneNumber}}" 
+      style="text-decoration: none; position: relative; bottom: 0;">
+      <ion-button expand="full" class="ion-text-capitalize" style="--background: #25D366" *ngIf="!theUserIsTheOwner"> Whatsapp<ion-icon name="logo-whatsapp"></ion-icon></ion-button>
+    </a>
+    <!-- <ion-button expand="block" fill="outline" class="chat-button" routerLink="/conversation/{{ item.owner.id}}" *ngIf="!theUserIsTheOwner">Chat with seller</ion-button> -->
+  </div>
+</ion-content>
+  

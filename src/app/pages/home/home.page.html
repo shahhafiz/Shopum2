@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center homepage-title">
+      Shopum
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showSearchBar()">  
+      <!-- <ion-button routerLink="/categories" routerDirection="forward"> -->
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar 
+    [@inOutAnimation]=" searchBar ? 'true' : 'false'" 
+    debounce="500" 
+    (ionChange)="search()"
+    [(ngModel)]="searchedKeyword"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <app-catalog-component [searchedKeyword]="found"></app-catalog-component>
+</ion-content>

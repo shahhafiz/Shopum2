@@ -1,0 +1,43 @@
+<ion-grid *ngIf="!pageIsReady">
+  <ion-row>
+    <ion-col *ngFor="let skeleton of skeletons" size="6">
+      <ion-card style="margin: 0; height: 270px;">
+        <ion-skeleton-text animated style="width: 100%; height: 150px; margin: 0%;"></ion-skeleton-text>
+        <ion-card-header>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 50%; height: 20px;"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let item of items" size="6">
+      <ion-card style="margin: 0; height: 270px; --background: white;" routerLink="/show/{{item.doc.id}}" routerDirection="forward">
+        <div class="container">
+          <img src="{{item.url}}" alt="">
+        </div>
+        <ion-card-header style="--background:white">
+          <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+          <ion-card-title>{{item.price | currency : 'RM '}}</ion-card-title>
+          <span style="position: relative; bottom: 0;">
+            <ion-icon ios="ios-time" md="md-time" style="position: relative; top: 2px;"></ion-icon>
+            {{item.timestamp | dayDiff}}
+          </span>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<br> <br>
+<div *ngIf="pageIsReady">
+  <div *ngIf="!allItemsLoaded">
+    <ion-button *ngIf="!loading" (click)="loadData($event)" fill="clear" expand="block">More</ion-button>
+    <ion-button *ngIf="loading" fill="clear" expand="block"><ion-spinner name="dots"></ion-spinner></ion-button>
+  </div>
+  <p *ngIf="allItemsLoaded" style="text-align: center; margin-bottom: 50px">You have reached the bottom of the page</p>
+</div>
+

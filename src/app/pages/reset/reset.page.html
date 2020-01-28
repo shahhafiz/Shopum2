@@ -1,0 +1,19 @@
+<ion-content class="ion-padding">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Reset Password</ion-title>
+  </ion-toolbar> 
+  <br>
+  <br>
+  <br>
+  <ion-item>
+    <!-- <ion-label>Email</ion-label> -->
+    <ion-input type="text" [(ngModel)]="email" placeholder="Email"></ion-input>
+  </ion-item>
+  <ion-button (click)="resetPassword()">
+    Reset
+  </ion-button>
+  <ion-button fill="clear" class="ion-float-right" routerDirection="back" routerLink="/login"  >
+    Back
+  </ion-button>
+</ion-content>
+  

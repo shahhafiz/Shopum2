@@ -1,0 +1,101 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>User Information</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding">
+  <ion-item lines="none" style="--border-radius: 5px;">
+      <ion-icon src="../../../assets/icon/information-borderless.svg" alt="" style="font-size: 2em; padding-right: 10px;"></ion-icon>
+      <ion-label class="ion-text-wrap ion-text-center" style="font-size: small;">You are almost there! But please fill up this form to help us improve in the future.</ion-label>
+  </ion-item>
+  <br>
+  <div class="ion-text-center">
+    <ion-icon src="../../../assets/icon/user-blue.svg" alt="" style="font-size: 10rem;"></ion-icon>
+  </div>
+  <br>
+  <form [formGroup]="myForm" (ngSubmit)="logForm()">
+    <ion-list style="border-radius: 10px;">
+      <ion-item>
+        <ion-label position="floating" color="primary">Gender</ion-label>
+        <ion-select formControlName="gender">
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Male">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating" color="primary">Age</ion-label>
+        <ion-select formControlName="age">
+          <ion-select-option value="18 - 24">18 - 24</ion-select-option>
+          <ion-select-option value="25 - 34">25 - 34</ion-select-option>
+          <ion-select-option value="35 - 44">35 - 44</ion-select-option>
+          <ion-select-option value="45 - 53">45 - 54</ion-select-option>
+          <ion-select-option value="55 & Above">55 & Above</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating" color="primary">Ethnicity</ion-label>
+        <ion-select formControlName="ethnicity">
+          <ion-select-option value="Malay">Malay</ion-select-option>
+          <ion-select-option value="Chinese">Chinese</ion-select-option>
+          <ion-select-option value="Indian">Indian</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating" color="primary">Faculty/Academy/Centre</ion-label>
+        <ion-select formControlName="faculty">
+          <ion-select-option value="Computer Science and IT">Computer Science & IT</ion-select-option>
+          <ion-select-option value="Education">Education</ion-select-option>
+          <ion-select-option value="Dentistry">Dentistry</ion-select-option>
+          <ion-select-option value="Engineering">Engineering</ion-select-option>
+          <ion-select-option value="Science">Science</ion-select-option>
+          <ion-select-option value="Law">Law</ion-select-option>
+          <ion-select-option value="Medicine">Medicine</ion-select-option>
+          <ion-select-option value="Arts and Social Sciences">Arts and Social Sciences</ion-select-option>
+          <ion-select-option value="Business and Accountancy">Business and Accountancy</ion-select-option>
+          <ion-select-option value="Economics and Administration">Economics and Administration</ion-select-option>
+          <ion-select-option value="Languages and Linguistics">Languages and Linguistics</ion-select-option>
+          <ion-select-option value="Built Environment">Built Environment</ion-select-option>
+          <ion-select-option value="Islamic Studies">Islamic Studies</ion-select-option>
+          <ion-select-option value="Malay Studies">Malay Studies</ion-select-option>
+          <ion-select-option value="Cultural">Cultural</ion-select-option>
+          <ion-select-option value="Sports">Sports & Excercise Sciences</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating" color="primary">Level of Study</ion-label>
+        <ion-select formControlName="study">
+          <ion-select-option value="Undergraduate">Undergraduate</ion-select-option>
+          <ion-select-option value="Master">Masters</ion-select-option>
+          <ion-select-option value="Phd">PhD</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary">Residential College</ion-label>
+        <ion-select formControlName="college">
+          <ion-select-option value="KK1">KK1</ion-select-option>
+          <ion-select-option value="KK2">KK2</ion-select-option>
+          <ion-select-option value="KK3">KK3</ion-select-option>
+          <ion-select-option value="KK4">KK4</ion-select-option>
+          <ion-select-option value="KK5">KK5</ion-select-option>
+          <ion-select-option value="KK6">KK6</ion-select-option>
+          <ion-select-option value="KK7">KK7</ion-select-option>
+          <ion-select-option value="KK8">KK8</ion-select-option>
+          <ion-select-option value="KK9">KK9</ion-select-option>
+          <ion-select-option value="KK10">KK10</ion-select-option>
+          <ion-select-option value="KK11">KK11</ion-select-option>
+          <ion-select-option value="KK12">KK12</ion-select-option>
+          <ion-select-option value="Out campus">Out campus</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <br>
+    <ion-button type="submit" [disabled]="!myForm.valid" class="ion-float-right">Start Shopping!</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-content>
+  <!-- Skeleton start -->
+  <div *ngIf="!show">
+      <ion-skeleton-text animated style="height: 400px; margin-top:0% ;"></ion-skeleton-text>
+      <ion-item>
+        <ion-label>
+          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+          <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+          <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+          <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+          <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
+          <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+          <p><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+        </ion-label>
+      </ion-item>
+    </div>
+  <!-- Skeleton end -->
+  <div *ngIf="data" ngClass="{'show':show, hide:!show}">
+    <img src="{{item.url}}" alt="" (load)="imageLoaded()">
+
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Category</ion-label>
+        <ion-item>
+          <ion-select [(ngModel)]="item.category" style="padding-left: 0;" [selectedText]="item.category">
+            <ion-select-option value="Fashion">Fashion</ion-select-option>
+            <ion-select-option value="Stationery">Stationery</ion-select-option>
+            <ion-select-option value="Book">Book</ion-select-option>
+            <ion-select-option value="Electronic">Electronic</ion-select-option>
+            <ion-select-option value="Vehicle">Vehicle</ion-select-option>
+            <ion-select-option value="Other">Other</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+        <ion-label>Item Name:</ion-label>
+        <ion-item>
+          <ion-input type="text" placeholder="Name" [(ngModel)]="item.name"></ion-input>
+        </ion-item> 
+        <ion-label>Price: &nbsp; </ion-label>
+        <ion-item>
+          <ion-input type="number" placeholder="Price" [(ngModel)]="item.price">RM</ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Description:</ion-label>
+        <ion-item>
+          <ion-textarea type="text" placeholder="Description" [(ngModel)]="item.description" rows="2"></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-content>
+      <ion-label>Faulty (if any):</ion-label>
+        <ion-item>
+          <ion-textarea  type="text" placeholder="Faulties (if any)" [(ngModel)]="item.faulty" rows="2"></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-row class="ion-justify-content-end ion-padding">
+  <ion-button fill="clear" color="danger" (click)="cancel()">Cancel</ion-button>
+  <ion-button fill="outline" (click)="save()">Save</ion-button>
+  <!-- <ion-button fill="outline" (click)="getTags(form.value)">Save</ion-button> -->
+</ion-row>

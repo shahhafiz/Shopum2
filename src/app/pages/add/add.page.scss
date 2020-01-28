@@ -1,0 +1,7 @@
+ion-toolbar.footer{
+    --background: var(--ion-color-light-tint);
+    ion-button{
+        margin: 0  10px;
+        --background: var(--ion-color-success-shade);
+    }
+}

@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <ion-icon src="../../../assets/icon/user-blue.svg" alt="" style="font-size: 10rem;"></ion-icon>
+  </div>
+  <br>
+  <form [formGroup]="myForm" (ngSubmit)="save(myForm)">
+    <ion-list style="border-radius: 10px; ">
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Email</ion-label>
+        <ion-input formControlName="email" readonly></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary">Password:</ion-label>
+        <ion-input type="password" value="password" readonly></ion-input>
+        <ion-icon class="password" name="create" (click)="changePassword()"></ion-icon>
+      </ion-item>
+    </ion-list>  
+
+    <br>
+
+    <ion-list style="border-radius: 10px;">
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Gender</ion-label>
+        <ion-input *ngIf="!edit" formControlName="gender" readonly></ion-input>
+        <ion-select *ngIf="edit" formControlName="gender">
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Male">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Age</ion-label>
+        <ion-input *ngIf="!edit" formControlName="age" readonly></ion-input>
+        <ion-select *ngIf="edit" formControlName="age">
+          <ion-select-option value="18 - 24">18 - 24</ion-select-option>
+          <ion-select-option value="25 - 34">25 - 34</ion-select-option>
+          <ion-select-option value="35 - 44">35 - 44</ion-select-option>
+          <ion-select-option value="45 - 54">45 - 54</ion-select-option>
+          <ion-select-option value="55 & Above">55 & Above</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Ethnicity</ion-label>
+        <ion-input *ngIf="!edit" formControlName="ethnicity" readonly></ion-input>
+        <ion-select *ngIf="edit" formControlName="ethnicity">
+          <ion-select-option value="Malay">Malay</ion-select-option>
+          <ion-select-option value="Chinese">Chinese</ion-select-option>
+          <ion-select-option value="Indian">Indian</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Faculty/Academy/Centre</ion-label>
+        <ion-input *ngIf="!edit" formControlName="faculty" readonly></ion-input>        
+        <ion-select *ngIf="edit" formControlName="faculty">
+          <ion-select-option value="Computer Science and IT">Computer Science and IT</ion-select-option>
+          <ion-select-option value="Education">Education</ion-select-option>
+          <ion-select-option value="Dentistry">Dentistry</ion-select-option>
+          <ion-select-option value="Engineering">Engineering</ion-select-option>
+          <ion-select-option value="Science">Science</ion-select-option>
+          <ion-select-option value="Law">Law</ion-select-option>
+          <ion-select-option value="Medicine">Medicine</ion-select-option>
+          <ion-select-option value="Arts and Social Sciences">Arts and Social Sciences</ion-select-option>
+          <ion-select-option value="Business and Accountancy">Business and Accountancy</ion-select-option>
+          <ion-select-option value="Economics and Administration">Economics and Administration</ion-select-option>
+          <ion-select-option value="Languages and Linguistics">Languages and Linguistics</ion-select-option>
+          <ion-select-option value="Built Environment">Built Environment</ion-select-option>
+          <ion-select-option value="Islamic Studies">Islamic Studies</ion-select-option>
+          <ion-select-option value="Malay Studies">Malay Studies</ion-select-option>
+          <ion-select-option value="Cultural">Cultural</ion-select-option>
+          <ion-select-option value="Sports">Sports & Excercise Sciences</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Level of Study</ion-label>
+        <ion-input *ngIf="!edit" formControlName="study" readonly></ion-input>
+        <ion-select *ngIf="edit" formControlName="study">
+          <ion-select-option value="Undergraduate">Undergraduate</ion-select-option>
+          <ion-select-option value="Master">Masters</ion-select-option>
+          <ion-select-option value="Phd">PhD</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none" class="bottom-border">
+        <ion-label position="floating" color="primary">Residential College</ion-label>
+        <ion-input *ngIf="!edit" formControlName="college" readonly></ion-input>
+        <ion-select *ngIf="edit" formControlName="college">
+          <ion-select-option value="KK1">KK1</ion-select-option>
+          <ion-select-option value="KK2">KK2</ion-select-option>
+          <ion-select-option value="KK3">KK3</ion-select-option>
+          <ion-select-option value="KK4">KK4</ion-select-option>
+          <ion-select-option value="KK5">KK5</ion-select-option>
+          <ion-select-option value="KK6">KK6</ion-select-option>
+          <ion-select-option value="KK7">KK7</ion-select-option>
+          <ion-select-option value="KK8">KK8</ion-select-option>
+          <ion-select-option value="KK9">KK9</ion-select-option>
+          <ion-select-option value="KK10">KK10</ion-select-option>
+          <ion-select-option value="KK11">KK11</ion-select-option>
+          <ion-select-option value="KK12">KK12</ion-select-option>
+          <ion-select-option value="Out campus">Out campus</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary">Phone Number</ion-label>
+        <ion-input *ngIf="!edit" formControlName="phoneNumber" readonly></ion-input>
+        <ion-input *ngIf="edit" formControlName="phoneNumber" type="number"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-button *ngIf="!edit" (click)="toggle()" class="ion-text-capitalize ion-float-right" fill="clear">Edit</ion-button>
+    <ion-button *ngIf="edit" type="submit" [disabled]="!myForm.valid" class="ion-text-capitalize ion-float-right">Save</ion-button>
+    <ion-button *ngIf="edit" (click)="cancel()" class="ion-text-capitalize ion-float-right" fill="clear">Cancel</ion-button>
+  </form>
+</ion-content>
