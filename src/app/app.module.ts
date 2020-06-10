@@ -22,12 +22,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyDX9-HcRJbMg3Xtczc4u9ycevht8D_qYbI",
-  authDomain: "fir-auth-5f721.firebaseapp.com",
-  databaseURL: "https://fir-auth-5f721.firebaseio.com",
-  projectId: "fir-auth-5f721",
-  storageBucket: "fir-auth-5f721.appspot.com",
-  messagingSenderId: "733963954079"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
 
 @NgModule({
